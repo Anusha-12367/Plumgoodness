@@ -7,19 +7,21 @@ import Baseclass.BaseClass;
 
 public class CheckOutPage1 extends BaseClass {
 	
-By chkout=By.cssSelector(".btn-text > span:nth-child(1)");
-//By pop1=By.xpath("/html/body/div/div[3]/div/div[2]/button[1]");
-//By popp=By.xpath("/html/body/div/div[3]/div");
-//By logout=By.cssSelector(".logout");
+	WebDriver dr;
+	By chkout=By.id("gokwik-btn");
+
+
 public CheckOutPage1(WebDriver dr) {
 		
-		BaseClass.dr=dr;
+		this.dr=dr;
 }
 public void shop() throws InterruptedException
 {
-	dr.findElement(chkout).click();
-	dr.navigate().back();
 	
+	dr.findElement(chkout).click();
+	Thread.sleep(3000);
+	dr.navigate().back();
+    
     dr.quit();
 
 }
